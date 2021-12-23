@@ -3,6 +3,7 @@ import "./productList.css";
 import data from "../data";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import QImage from "./QImage";
 
 function ProductList() {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function ProductList() {
                   onClick={() => singleProduct(data)}
                   className="product-container"
                 >
-                  <img src={data.img} alt="" />
+                  <QImage src={data.img} />
                   <h1>{data.name}</h1>
                   {/* <p>{data.desc}</p> */}
                   <h2>Price: ₹{data.price}</h2>

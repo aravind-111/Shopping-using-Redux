@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./individualProduct.css";
 import QCounter from "./QCounter";
+import QImage from "./QImage";
 
 function IndividualProduct() {
   const singleProduct = useSelector((state) => state.cart.currentProduct);
@@ -35,7 +36,7 @@ function IndividualProduct() {
   return (
     <div className="mainContainer">
       <div className="container">
-        <img src={singleProduct.img} alt="" />
+        <QImage src={singleProduct.img} />
         <div className="details">
           <h1>{singleProduct.name}</h1>
           <p>{singleProduct.desc}</p>

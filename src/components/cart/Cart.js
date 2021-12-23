@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import QCounter from "../QCounter";
+import QImage from "../QImage";
 import "./Cart.css";
 
 function Cart() {
@@ -32,7 +33,7 @@ function Cart() {
         {cart.map((item) => {
           return (
             <div key={item.id} className="individualItem">
-              <img className="image" src={item.img} alt="" />
+              <QImage className="image" src={item.img} />
               <div className="cartDetails">
                 <h2>{item.name}</h2>
                 <h2>₹{item.price}</h2>
