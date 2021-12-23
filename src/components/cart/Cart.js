@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import QCounter from "../QCounter";
 import "./Cart.css";
 
 function Cart() {
@@ -35,17 +36,17 @@ function Cart() {
               <div className="cartDetails">
                 <h2>{item.name}</h2>
                 <h2>₹{item.price}</h2>
-                <div className="cartButton">
-                  <button onClick={() => incCart(item)}>+</button>
-                  {item.quantity}
-                  <button onClick={() => decCart(item)}>-</button>
-                </div>
+                <QCounter
+                  className="cartButton"
+                  onIncrement={incCart}
+                  OnDecrement={decCart}
+                  item={item}
+                />
               </div>
             </div>
           );
         })}
       </div>
-      {/* <div></div> */}
       <div className="amount">
         <h2>Cart Value</h2>
         <hr></hr>

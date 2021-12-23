@@ -7,7 +7,7 @@ let initialState = {
 };
 
 const Reducer = (state = initialState, action) => {
-  console.log(action.payload);
+  console.log(state);
   switch (action.type) {
     // GET CURRENT PRODUCT CASE
     case "getCurrentProduct":
@@ -49,6 +49,7 @@ const Reducer = (state = initialState, action) => {
                 : item
             )
           : [...state.cart, { ...action.payload, quantity: 1 }],
+        currentProduct: isCart || { ...state.currentProduct, quantity: 1 },
       };
 
     // DECREAMENT THE PRODUCT CASE
@@ -60,6 +61,10 @@ const Reducer = (state = initialState, action) => {
             ? { ...item, quantity: item.quantity - 1 }
             : item
         ),
+        currentProduct: state.currentProduct && {
+          ...state.currentProduct,
+          quantity: state.currentProduct.quantity - 1,
+        },
       };
 
     // REMOVE FROM CART
