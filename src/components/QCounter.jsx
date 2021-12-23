@@ -10,7 +10,7 @@ export default function QCounter({
   return (
     <div className={className}>
       <button onClick={() => onIncrement(item)}>+</button>
-      {item.quantity > 1 ? item.quantity : 0}
+      {item.quantity >= 1 ? item.quantity : 0}
       <button onClick={() => OnDecrement(item)}>-</button>
     </div>
   );
