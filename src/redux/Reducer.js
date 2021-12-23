@@ -49,7 +49,12 @@ const Reducer = (state = initialState, action) => {
                 : item
             )
           : [...state.cart, { ...action.payload, quantity: 1 }],
-        currentProduct: isCart || { ...state.currentProduct, quantity: 1 },
+        currentProduct: isCart
+          ? {
+              ...state.currentProduct,
+              quantity: state.currentProduct.quantity + 1,
+            }
+          : { ...state.currentProduct, quantity: 1 },
       };
 
     // DECREAMENT THE PRODUCT CASE
@@ -72,6 +77,10 @@ const Reducer = (state = initialState, action) => {
       return {
         ...state,
         cart: state.cart.filter((item) => item.id !== action.payload.id),
+        currentProduct: {
+          ...state.currentProduct,
+          quantity: 0,
+        },
       };
 
     default:

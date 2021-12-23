@@ -6,7 +6,7 @@ export default function QCounter({
   item,
   className,
 }) {
-  console.log(item);
+  console.log(item.quantity);
   return (
     <div className={className}>
       <button onClick={() => onIncrement(item)}>+</button>
