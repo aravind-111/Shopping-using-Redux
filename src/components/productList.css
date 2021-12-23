@@ -1,0 +1,32 @@
+* {
+  font-weight: normal;
+}
+
+.main-container {
+  margin-top: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.product-container img {
+  width: 13rem;
+  height: 13rem;
+}
+
+.product-container button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
