@@ -9,6 +9,7 @@ function IndividualProduct() {
   const value = cart.map(
     (item) => item.id === singleProduct.id && item.quantity
   );
+  console.log(value);
 
   const incCart = (item) => {
     console.log(item);
@@ -30,7 +31,7 @@ function IndividualProduct() {
           <h1>₹{singleProduct.price}</h1>
           <div className="buttonDiv">
             <button onClick={() => incCart(singleProduct)}>+</button>
-            {value > 0 ? value : 0}
+            {value}
             <button onClick={() => decCart(singleProduct)}>-</button>
           </div>
         </div>

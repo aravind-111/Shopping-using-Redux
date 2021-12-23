@@ -12,7 +12,7 @@ function Cart() {
     0
   );
   const tax = (itemPrice * 0.12).toFixed(2);
-  const shippingCost = itemPrice > 1000 ? 0 : 50;
+  const shippingCost = itemPrice > 1000 ? 0 : itemPrice > 0 ? 50 : 0;
   const totalCost = Math.round(+itemPrice + +tax + +shippingCost);
 
   const incCart = (item) => {
