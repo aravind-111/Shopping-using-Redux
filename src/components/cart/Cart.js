@@ -33,7 +33,8 @@ function Cart() {
         {cart.map((item) => {
           return (
             <div key={item.id} className="individualItem">
-              <QImage className="image" src={item.img} />
+              <QImage zoom src={item.img} />
+              {/* <ReactImageZoom /> */}
               <div className="cartDetails">
                 <h2>{item.name}</h2>
                 <h2>₹{item.price}</h2>
