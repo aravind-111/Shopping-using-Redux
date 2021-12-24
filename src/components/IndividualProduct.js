@@ -46,6 +46,7 @@ function IndividualProduct() {
             onIncrement={incCart}
             OnDecrement={decCart}
             item={singleProduct}
+            value={value}
           />
         </div>
       </div>
